@@ -2,7 +2,7 @@ import { connect } from "mongoose";
 import dotenv from "dotenv";
 import express from "express";
 import {
-  insertNewPost,
+  insertNewPost, getPostById
 } from "./postDao.js";
 import cors from "cors";
 
@@ -22,6 +22,7 @@ connect(process.env.DB_URL)
   });
 
   app.post("/post/insert", insertNewPost);
+  app.get("/post/:post_id", getPostById);
 
   app.listen(8000, () => {
   console.log(`Node server is running on port 8000`);

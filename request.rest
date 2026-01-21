@@ -35,4 +35,11 @@ Content-Type: application/json
 GET http://localhost:8000/comment/6970daad1045d63fc3aeeed2
 
 ### Delete a comment
-DELETE http://localhost:8000/comment/6970dbe022991c8f9f2432d2
+DELETE http://localhost:8000/comment/6970dab81045d63fc3aeeed5
+### Update comment by id 
+PUT http://localhost:8000/comment/6970dbe222991c8f9f2432d5
+Content-Type: application/json
+
+{
+ "comment": "Update!!! football is life"
+}

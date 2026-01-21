@@ -8,7 +8,7 @@ import {
   getPostById,
   updatePost,
 } from "./postDao.js";
-import { insertNewComment, getCommentsByPostId, deleteComment } from "./commentDao.js";
+import { insertNewComment, getCommentsByPostId, updateComment ,deleteComment } from "./commentDao.js";
 import cors from "cors";
 
 dotenv.config();
@@ -27,15 +27,16 @@ connect(process.env.DB_URL)
   });
 
 app.post("/post/insert", insertNewPost);
-app.get("/post/:post_id", getPostById);
+app.get("/post/:postId", getPostById);
 app.get("/posts", getAllPosts);
-app.put("/post/:post_id", updatePost);
+app.put("/post/:postId", updatePost);
 app.get("/post", getPostsBySender);
 
 // Comment API
 app.post("/comment/insert", insertNewComment);
 app.get("/comment/:post_id", getCommentsByPostId);
 app.delete("/comment/:id", deleteComment);
+app.put("/comment/:commentId", updateComment);
 
 app.listen(8000, () => {
   console.log(`Node server is running on port 8000`);

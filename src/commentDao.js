@@ -41,3 +41,20 @@ export const deleteComment = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+export const updateComment = async (req, res) => {
+  try {
+    const updatedComment = await Comment.findByIdAndUpdate(
+      req.params.commentId,
+      req.body,
+      { new: true, runValidators: true },
+    );
+
+    if (!updatedComment) {
+      return res.status(404).json({ error: "Comment not exist" });
+    }
+
+    res.json(updatedComment);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};

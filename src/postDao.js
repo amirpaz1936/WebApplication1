@@ -15,7 +15,7 @@ export const insertNewPost = async (req, res) => {
 
 export const getPostById = async (req, res) => {
   try {
-    const post = await Post.findById(req.params.post_id);
+    const post = await Post.findById(req.params.postId);
 
     if (!post) {
       return res.status(404).json({ message: "Post not found" });
@@ -38,7 +38,7 @@ export const getAllPosts = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   try {
-    const updatedPost = await Post.findByIdAndUpdate(req.params.post_id, req.body, { new: true });
+    const updatedPost = await Post.findByIdAndUpdate(req.params.postId, req.body, { new: true });
 
     if (!updatedPost) {
       return res.status(404).json({ message: "Post not found" });

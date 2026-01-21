@@ -30,3 +30,11 @@ Content-Type: application/json
 {
   "postId": "1", "comment": "football is life"
 }
+
+### Update comment by id 
+PUT http://localhost:8000/comment/1
+Content-Type: application/json
+
+{
+"postId": "1", "comment": "Update!!! football is life"
+}

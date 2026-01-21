@@ -1,10 +1,7 @@
 import { connect } from "mongoose";
 import dotenv from "dotenv";
 import express from "express";
-import {
-  insertNewPost,
-  getAllPosts
-} from "./postDao.js";
+import { insertNewPost, getAllPosts, getPostsBySender } from "./postDao.js";
 import cors from "cors";
 
 dotenv.config();
@@ -22,10 +19,10 @@ connect(process.env.DB_URL)
     console.error("Error connecting to MongoDB:", error);
   });
 
-  app.post("/post/insert", insertNewPost);
-  app.get("/posts", getAllPosts);
+app.post("/post/insert", insertNewPost);
+app.get("/posts", getAllPosts);
+app.get("/post", getPostsBySender);
 
-
-  app.listen(8000, () => {
+app.listen(8000, () => {
   console.log(`Node server is running on port 8000`);
 });

@@ -3,8 +3,11 @@ POST http://localhost:8000/post/insert
 Content-Type: application/json
 
 {
-  "message": "insert new post"
+  "message": "insert new post", "senderId": "1"
 }
 
 ### Get all posts 
 GET http://localhost:8000/posts
+
+### Get posts by sender
+GET http://localhost:8000/post?senderId=1

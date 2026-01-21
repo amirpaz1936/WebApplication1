@@ -33,3 +33,17 @@ export const getAllPosts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const updatePost = async (req, res) => {
+  try {
+    const updatedPost = await Post.findByIdAndUpdate(req.params.post_id, req.body, { new: true });
+
+    if (!updatedPost) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+
+    res.json(updatedPost);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

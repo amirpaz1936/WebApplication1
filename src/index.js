@@ -4,7 +4,8 @@ import express from "express";
 import {
   insertNewPost,
   getPostById,
-  getAllPosts
+  getAllPosts,
+  updatePost
 } from "./postDao.js";
 import cors from "cors";
 
@@ -26,6 +27,7 @@ connect(process.env.DB_URL)
   app.post("/post/insert", insertNewPost);
   app.get("/post/:post_id", getPostById);
   app.get("/posts", getAllPosts);
+  app.put("/post/:post_id", updatePost);
 
   app.listen(8000, () => {
   console.log(`Node server is running on port 8000`);

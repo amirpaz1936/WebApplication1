@@ -1,3 +1,4 @@
+//Amir-Paz-211536032-Ofek-Berkovich-211566989
 import { connect } from "mongoose";
 import dotenv from "dotenv";
 import express from "express";
@@ -8,7 +9,7 @@ import {
   getPostById,
   updatePost,
 } from "./postDao.js";
-import { insertNewComment, updateComment } from "./commentDao.js";
+import { insertNewComment, getCommentsByPostId, updateComment ,deleteComment } from "./commentDao.js";
 import cors from "cors";
 
 dotenv.config();
@@ -34,6 +35,8 @@ app.get("/post", getPostsBySender);
 
 // Comment API
 app.post("/comment/insert", insertNewComment);
+app.get("/comment/:post_id", getCommentsByPostId);
+app.delete("/comment/:id", deleteComment);
 app.put("/comment/:commentId", updateComment);
 
 app.listen(8000, () => {

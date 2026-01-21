@@ -7,17 +7,17 @@ Content-Type: application/json
 }
 
 ### Get a post by id
-GET http://localhost:8000/post/6970b0928fc7b2e0c7ef7513
+GET http://localhost:8000/post/6970daad1045d63fc3aeeed2
 
 ### Get all posts 
 GET http://localhost:8000/posts
 
 ### Update a post
-PUT http://localhost:8000/post/6970b0928fc7b2e0c7ef7513
+PUT http://localhost:8000/post/6970daad1045d63fc3aeeed2
 Content-Type: application/json
 
 {
-  "message": "post about food",
+  "message": "post about food!!! ilove food",
   "senderId": "1"
 }
 ### Get posts by sender
@@ -28,13 +28,18 @@ POST http://localhost:8000/comment/insert
 Content-Type: application/json
 
 {
-  "postId": "1", "comment": "football is life"
+  "postId": "6970daad1045d63fc3aeeed2", "comment": "football is life"
 }
 
+### Get comments by post id
+GET http://localhost:8000/comment/6970daad1045d63fc3aeeed2
+
+### Delete a comment
+DELETE http://localhost:8000/comment/6970dd30f6022c2a5c11683e
 ### Update comment by id 
-PUT http://localhost:8000/comment/1
+PUT http://localhost:8000/comment/6970de1e8c40c82b15aaf544
 Content-Type: application/json
 
 {
-"postId": "1", "comment": "Update!!! football is life"
+ "comment": "Update!!! football is life!!!!!!"
 }

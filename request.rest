@@ -1,0 +1,7 @@
+### Insert new post
+POST http://localhost:8000/post/insert
+Content-Type: application/json
+
+{
+  "message": "insert new post"
+}

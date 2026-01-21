@@ -54,7 +54,9 @@ export const getPostsBySender = async (req, res) => {
     const posts = await Post.find({ senderId: req.query.senderId });
 
     if (posts.length == 0) {
-      return res.status(404).json({ message: "this sender do not send any posts" });
+      return res
+        .status(404)
+        .json({ message: "this sender do not send any posts" });
     }
 
     res.json(posts);

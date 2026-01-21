@@ -10,3 +10,12 @@ export const insertNewPost = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+export const getAllPosts = async (req, res) => {
+  try {
+    const posts = await Post.find();
+    res.json(posts);
+  } catch (error) {
+    res.status(HTTP).json({ message: error.message });
+  }
+};

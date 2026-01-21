@@ -5,3 +5,6 @@ Content-Type: application/json
 {
   "message": "insert new post"
 }
+
+### Get all posts 
+GET http://localhost:8000/posts

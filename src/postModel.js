@@ -3,6 +3,7 @@ import { Schema, model } from "mongoose";
 const PostModel = new Schema(
   {
     message: { type: String },
+    senderId: { type: String}
   },
   { collection: "Posts" }
 );

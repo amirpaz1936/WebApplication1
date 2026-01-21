@@ -17,7 +17,7 @@ PUT http://localhost:8000/post/6970daad1045d63fc3aeeed2
 Content-Type: application/json
 
 {
-  "message": "post about food",
+  "message": "post about food!!! ilove food",
   "senderId": "1"
 }
 ### Get posts by sender
@@ -35,11 +35,11 @@ Content-Type: application/json
 GET http://localhost:8000/comment/6970daad1045d63fc3aeeed2
 
 ### Delete a comment
-DELETE http://localhost:8000/comment/6970dab81045d63fc3aeeed5
+DELETE http://localhost:8000/comment/6970dd30f6022c2a5c11683e
 ### Update comment by id 
-PUT http://localhost:8000/comment/6970dbe222991c8f9f2432d5
+PUT http://localhost:8000/comment/6970de1e8c40c82b15aaf544
 Content-Type: application/json
 
 {
- "comment": "Update!!! football is life"
+ "comment": "Update!!! football is life!!!!!!"
 }

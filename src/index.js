@@ -6,6 +6,7 @@ import {
   getAllPosts,
   getPostsBySender,
   getPostById,
+  updatePost,
 } from "./postDao.js";
 import { insertNewComment } from "./commentDao.js";
 import cors from "cors";
@@ -25,11 +26,11 @@ connect(process.env.DB_URL)
     console.error("Error connecting to MongoDB:", error);
   });
 
-// Posts API
 app.post("/post/insert", insertNewPost);
-app.get("/posts", getAllPosts);
-app.get("/post", getPostsBySender);
 app.get("/post/:post_id", getPostById);
+app.get("/posts", getAllPosts);
+app.put("/post/:post_id", updatePost);
+app.get("/post", getPostsBySender);
 
 // Comment API
 app.post("/comment/insert", insertNewComment);

@@ -7,6 +7,7 @@ import {
   getPostsBySender,
   getPostById,
 } from "./postDao.js";
+import { insertNewComment } from "./commentDao.js";
 import cors from "cors";
 
 dotenv.config();
@@ -24,10 +25,14 @@ connect(process.env.DB_URL)
     console.error("Error connecting to MongoDB:", error);
   });
 
+// Posts API
 app.post("/post/insert", insertNewPost);
 app.get("/posts", getAllPosts);
 app.get("/post", getPostsBySender);
 app.get("/post/:post_id", getPostById);
+
+// Comment API
+app.post("/comment/insert", insertNewComment);
 
 app.listen(8000, () => {
   console.log(`Node server is running on port 8000`);

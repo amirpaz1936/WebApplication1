@@ -14,3 +14,10 @@ GET http://localhost:8000/posts
 
 ### Get posts by sender
 GET http://localhost:8000/post?senderId=1
+
+### Insert new comment POST http://localhost:8000/comment/insert
+Content-Type: application/json
+
+{
+  "postId": "1", "comment": "football is life"
+}

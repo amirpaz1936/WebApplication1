@@ -12,5 +12,13 @@ GET http://localhost:8000/post/6970b0928fc7b2e0c7ef7513
 ### Get all posts 
 GET http://localhost:8000/posts
 
+### Update a post
+PUT http://localhost:8000/post/6970b0928fc7b2e0c7ef7513
+Content-Type: application/json
+
+{
+  "message": "This is the updated message.",
+  "senderId": "1"
+}
 ### Get posts by sender
 GET http://localhost:8000/post?senderId=1
